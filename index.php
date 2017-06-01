@@ -11,14 +11,15 @@
 
 <?php
 
-    $dossier = "/home/selma/dev/blog_php/posts";
+    $dossier = "posts";
     
         if (is_dir($dossier)) {
 
   if ($file = opendir($dossier)) {
+    
        while (($contenu = readdir($file)) !== false) {
            if( $contenu != '.' && $contenu != '..') {
-           echo '<a href="'.$dossier.$contenu.'">'.$contenu.'</a>'.'</br>';
+           echo '<a href="'.$dossier. "/" .$contenu.'">'.$contenu.'</a>'.'</br>';
            }
        }
        closedir($file);
