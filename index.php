@@ -23,8 +23,12 @@ foreach($dossier as $contenu) {
         echo '<form action="delete.php" method="GET">
         <input type="hidden" name="filename" value = "' . $contenu . '">
         <input type="submit" value="Delete">
-    </form>'."\n";
+        </form>'."\n";
 
+        echo '<form action="create.php" method="GET">
+        <input type="hidden" name="filename" value = "' . $contenu . '">
+        <input type="submit" value="Edit">
+        </form>'."\n";
     }
     
 }
