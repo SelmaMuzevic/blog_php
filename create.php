@@ -22,8 +22,8 @@ $document = file_get_contents("posts" . "/" .$filename);
 
         <form action="create_file.php" method="POST">
             <p><label>Titre :</label></p>
-            <p><input type="text" name="titre" value="<?php echo $filename;?>"></p>
-            <label>Contenu :</label>
+            <input type="text" name="titre" value="<?php echo $filename;?>"/>
+           <p><label>Contenu :</label></p>
 
             <p><textarea name="contenu" rows="20" cols="80"><?php echo $document;?></textarea></p>
             <p><button name="create">Envoyer</button></p>
