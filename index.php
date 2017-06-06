@@ -29,6 +29,7 @@ foreach($dossier as $contenu) {
         <input type="hidden" name="filename" value = "' . $contenu . '">
         <input type="submit" value="Edit">
         </form>'."\n";
+        echo '<a href="change-file.php';
     }
     
 }

@@ -18,8 +18,7 @@ $document = file_get_contents("posts" . "/" .$filename);
 
 <body>
     <h1>Nouvelle Entree</h1>
-    <div class="form">
-
+    
         <form action="create_file.php" method="POST">
             <p><label>Titre :</label></p>
             <input type="text" name="titre" value="<?php echo $filename;?>"/>
@@ -29,8 +28,7 @@ $document = file_get_contents("posts" . "/" .$filename);
             <p><button name="create">Envoyer</button></p>
 
         </form>
-    </div>
-
+   
 </body>
 
 </html>
