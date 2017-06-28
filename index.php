@@ -8,31 +8,28 @@
 </head>
     <body>
    
-            <h1>Mon Blog</h1>
-
-<?php
-
+<?php require_once('header.php'); ?>
+	    <h1>Mon super blog !</h1>
+	    <a href="create.php">Ajouter</a>
+	    <?php
 $dossier = scandir("posts");
 foreach($dossier as $contenu) {
-    if (!is_dir($contenu)) {
+    if (!is_dir('posts/'.$contenu)) {
+        // continue;
 
-        echo '<h2>'.basename($contenu, ".txt").'</h2>'."\n";
-        $content = file_get_contents('posts/'.$contenu);
-        echo '<p>'.$content.'</p>'."\n";
+        echo '<h2>'.basename($contenu, ".txt").'</h2>';
+	    $content = file_get_contents('posts/'.$contenu);
 
-        echo '<form action="delete.php" method="GET">
-        <input type="hidden" name="filename" value = "' . $contenu . '">
-        <input type="submit" value="Delete">
-        </form>'."\n";
+	    echo '<p>'.$content.'</p>';
+	    echo '<form method="post" action="delete_file.php">';
+	    echo '<input type="hidden" name="fichier" value="' . $contenu .'">';
+	    echo '<button>Supprimer</button>';
 
-        echo '<form action="create.php" method="GET">
-        <input type="hidden" name="filename" value = "' . $contenu . '">
-        <input type="submit" value="Edit">
-        </form>'."\n";
-        echo '<a href="change-file.php';
+	    echo '</form>';
+
+	    echo '<a href="change-file.php?fichier='.$contenu.'">Modifier</a>';
+	    }
     }
-    
-}
 
 ?>
 

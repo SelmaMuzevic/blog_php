@@ -8,14 +8,20 @@
 </head>
 
 <body>
-<p>Veuillez vous insrire </p>
+
 			
-<form action="inscription.php" method="POST">
+
+<?php
+session_start();
+if(isset($_SESSION['utilisateur'])){
+	echo '<p> Bonjour, '.$_SESSION['utilisateur'].'</p>';
+}else{
+	echo '<p>Veuillez vous insrire </p>','<form action="inscription.php" method="POST">
 	    <label>Pseudo :</label>
 	    <input type="text" name="pseudo">
 	    <label>Mot de Passe :</label>
 	    <input type="password" name="mdp">
-	    <button>S'inscrire</button>
+	    <button>S\'inscrire</button>
 	</form>
 	<form action="login.php" method="POST">
 	    <label>Pseudo :</label>
@@ -23,8 +29,9 @@
 	    <label>Mot de Passe :</label>
 	    <input type="password" name="mdp">
 	    <button>Connexion</button>
-	</form>
-
+	</form>';
+}
+?>
 
     </body>
 </html>

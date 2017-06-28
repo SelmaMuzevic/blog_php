@@ -19,10 +19,10 @@ $document = file_get_contents("posts" . "/" .$filename);
 <body>
     <h1>Nouvelle Entree</h1>
     
-        <form action="create_file.php" method="POST">
+        <form action="create_file.php" method="GET">
             <p><label>Titre :</label></p>
             <input type="text" name="titre" value="<?php echo $filename;?>"/>
-           <p><label>Contenu :</label></p>
+            <p><label>Contenu :</label></p>
 
             <p><textarea name="contenu" rows="20" cols="80"><?php echo $document;?></textarea></p>
             <p><button name="create">Envoyer</button></p>

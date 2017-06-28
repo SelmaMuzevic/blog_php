@@ -1,8 +1,8 @@
 <?php
 
-    if(isset($_POST["create"])){
-        $titre = $_POST ["titre"];
-        $contenu = $_POST ["contenu"];
+    if(isset($_GET["create"])){
+        $titre = $_GET ["titre"];
+        $contenu = $_GET ["contenu"];
 
     if(!is_dir("posts")){
         mkdir("posts");
